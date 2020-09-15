@@ -36,9 +36,7 @@ pipeline {
       post {
         always {
 
-          publishCoverage 
-            adapters: [coberturaAdapter('coverage/cobertura-coverage.xml')], 
-            sourceFileResolver: sourceFiles('NEVER_STORE')
+          publishCoverage adapters: [coberturaAdapter('coverage/cobertura-coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')
 
           publishHTML([
             allowMissing: false, 
