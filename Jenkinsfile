@@ -29,7 +29,7 @@ pipeline {
       }
       post {
         always {
-          junit allowEmptyResults: true, keepLongStdio: true, testResults: 'artifacts/**/*.xml'
+          junit allowEmptyResults: true, keepLongStdio: true, testResults: 'artifacts/test/*.xml'
         }     
       } 
     }
