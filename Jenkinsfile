@@ -25,8 +25,14 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'npm run test'
+        sh 'npm run test-jenkins'
       }
+
+      post {
+        always {
+          junit allowEmptyResults: true, keepLongStdio: true, testResults: 'coverate/test-report/*.xml'
+        }     
+      }    
     }
 
     stage('Coverage') {
