@@ -24,5 +24,11 @@ pipeline {
         sh 'npm run test'
       }
     }
+
+    stage('Performance') {
+      steps {
+        sh 'npm run test-performance'
+      }
+    }
   }
 }

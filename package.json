@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "coverage": "nyc npm run test",
+    "test-performance": "#todo",
     "test": "mocha test/**/*spec.js --recursive"
   },
   "repository": {
