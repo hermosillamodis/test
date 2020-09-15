@@ -26,11 +26,10 @@ pipeline {
     stage('Test') {
       steps {
         sh 'npm run test-jenkins'
-
       }
       post {
         always {
-          junit allowEmptyResults: true, keepLongStdio: true, testResults: 'reports/*.xml'
+          junit allowEmptyResults: true, keepLongStdio: true, testResults: 'artifacts/**/*.xml'
         }     
       } 
     }
