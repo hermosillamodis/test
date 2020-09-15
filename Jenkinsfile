@@ -30,7 +30,7 @@ pipeline {
 
       post {
         always {
-          junit allowEmptyResults: true, keepLongStdio: true, testResults: 'coverate/test-report/*.xml'
+          junit allowEmptyResults: true, keepLongStdio: true, testResults: 'coverage/test-report/*.xml'
         }     
       }    
     }
