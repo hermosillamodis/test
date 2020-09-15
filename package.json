@@ -1,0 +1,26 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "coverage": "nyc npm run test",
+    "test": "mocha test/**/*spec.js --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hermosillamodis/test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hermosillamodis/test/issues"
+  },
+  "homepage": "https://github.com/hermosillamodis/test#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.1.3",
+    "nyc": "^15.1.0"
+  }
+}
