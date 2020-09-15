@@ -30,6 +30,7 @@ pipeline {
       post {
         always {
           junit allowEmptyResults: true, keepLongStdio: true, testResults: 'artifacts/test/*.xml'
+          publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'artifacts/coverage/lcov-report', reportFiles: 'index.html', reportName: 'Coverage Report', reportTitles: ''])
         }     
       } 
     }
