@@ -42,7 +42,9 @@ pipeline {
       post {
         always {
 
-          publishCoverage adapters: [coberturaAdapter(mergeToOneReport: true, path: 'coverage/cobertura-coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')
+          publishCoverage adapters: [istanbulCoberturaAdapter('coverage/cobertura-coverage.xml')],
+            sourceFileResolver: sourceFiles('NEVER_STORE'),
+            calculateDiffForChangeRequests: true
 
           publishHTML([
             allowMissing: false, 
