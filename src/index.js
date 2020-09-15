@@ -1,3 +1,5 @@
+const utils = require('./utils');
+
 function hello(name) {
     return `Hello ${name}`;
 }

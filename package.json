@@ -28,6 +28,13 @@
     "nyc": "^15.1.0"
   },
   "nyc": {
+    "extension": [
+      ".js"
+    ],
+    "include": [
+      "src/**/*.js",
+      "src/*.js"
+    ],
     "reporter": [
       "text"
     ]
