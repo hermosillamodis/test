@@ -31,7 +31,8 @@ pipeline {
       post {
         always {
           junit allowEmptyResults: true, keepLongStdio: true, testResults: 'reports/*.xml'
-        }      
+        }     
+      } 
     }
 
     stage('Performance') {
