@@ -10,7 +10,7 @@ describe('Index Test', function () {
         });
 
         it('should return \'Bye\' with name \'Antonio\'', function () {
-            assert.equal(bye('Antonio'), 'Hello Antonio');
+            assert.equal(bye('Antonio'), 'Bye Antonio');
         });
 
         it('should return \'Bye\' with name \'Antonio\'', function () {
