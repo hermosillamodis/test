@@ -42,10 +42,6 @@ pipeline {
       post {
         always {
 
-          publishCoverage adapters: [istanbulCoberturaAdapter('coverage/cobertura-coverage.xml')],
-            sourceFileResolver: sourceFiles('NEVER_STORE'),
-            calculateDiffForChangeRequests: true
-
           publishHTML([
             allowMissing: false, 
             alwaysLinkToLastBuild: false, 
