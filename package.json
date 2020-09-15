@@ -7,7 +7,7 @@
     "coverage": "nyc npm run test",
     "test-performance": "#todo",
     "test": "mocha test/**/*spec.js --recursive",
-    "test-jenkins": "JUNIT_REPORT_PATH=./report.xml mocha --colors --reporter mocha-jenkins-reporter"
+    "test-jenkins": "JUNIT_REPORT_PATH=./reports/report.xml mocha --colors --reporter mocha-jenkins-reporter"
   },
   "repository": {
     "type": "git",

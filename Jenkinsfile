@@ -26,7 +26,7 @@ pipeline {
     stage('Test') {
       steps {
         sh 'npm run test-jenkins'
-        junit allowEmptyResults: true, testResults: './report.xml'
+        junit allowEmptyResults: true, keepLongStdio: true, testResults: 'reports/*.xml'
       }
     }
 
