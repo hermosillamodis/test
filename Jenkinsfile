@@ -25,17 +25,26 @@ pipeline {
 
     stage('Test') {
       steps {
+        sh 'npm run test'
+      }
+    }
+
+    stage('Coverage') {
+      steps {
         sh 'npm run coverage-jenkins'
       }
       post {
         always {
-          junit allowEmptyResults: true, keepLongStdio: true, testResults: 'artifacts/test/*.xml'
+
+          publishCoverage 
+            adapters: [coberturaAdapter('coverage/cobertura-coverage.xml')], 
+            sourceFileResolver: sourceFiles('NEVER_STORE')
 
           publishHTML([
             allowMissing: false, 
             alwaysLinkToLastBuild: false, 
             keepAll: true, 
-            reportDir: 'artifacts/coverage/lcov-report', 
+            reportDir: 'coverage/lcov-report', 
             reportFiles: 'index.html', 
             reportName: 'Coverage Report', reportTitles: ''
           ])
