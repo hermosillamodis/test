@@ -25,7 +25,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'npm run test-jenkins'
+        sh 'npm run coverage-jenkins'
       }
       post {
         always {
