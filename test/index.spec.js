@@ -9,8 +9,12 @@ describe('Index Test', function () {
             assert.equal(hello('Antonio'), 'Hello Antonio');
         });
 
-        it('should return \'bye\' with name \'Antonio\'', function () {
+        it('should return \'Bye\' with name \'Antonio\'', function () {
             assert.equal(bye('Antonio'), 'Hello Antonio');
+        });
+
+        it('should return \'Bye\' with name \'Antonio\'', function () {
+            assert.equal(bye('Antonio'), 'Bye Antonio');
         });
 
     });
