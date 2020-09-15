@@ -41,21 +41,9 @@ pipeline {
       }
       post {
         always {
-
-          publishCoverage adapters: [istanbulCoberturaAdapter('coverage/cobertura-coverage.xml')],
-            sourceFileResolver: sourceFiles('NEVER_STORE'),
-            calculateDiffForChangeRequests: true
-
-          publishHTML([
-            allowMissing: false, 
-            alwaysLinkToLastBuild: false, 
-            keepAll: true, 
-            reportDir: 'coverage/lcov-report', 
-            reportFiles: 'index.html', 
-            reportName: 'Detail Coverage Report', reportTitles: ''
-          ])
-        }     
-      } 
+          step([$class: 'CoberturaPublisher', coberturaReportFile: 'coverage/cobertura-coverage.xml'])
+        }
+      }
     }
 
     stage('Performance') {
