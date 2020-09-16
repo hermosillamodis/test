@@ -42,6 +42,15 @@ pipeline {
       post {
         always {
           step([$class: 'CoberturaPublisher', coberturaReportFile: 'coverage/cobertura-coverage.xml'])
+
+          publishHTML([
+            allowMissing: false, 
+            alwaysLinkToLastBuild: false, 
+            keepAll: true, 
+            reportDir: 'coverage/lcov-report', 
+            reportFiles: 'index.html', 
+            reportName: 'Detail Coverage Report', reportTitles: ''
+          ])
         }
       }
     }
